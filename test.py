@@ -24,6 +24,7 @@ def vigenere_decrypt(ciphertext, key):
             key_idx += 1
         else:
             plaintext.append(char)
+            
     return "".join(plaintext)
 
 def derive_key_segment(cipher_segment, plain_segment):
@@ -117,6 +118,7 @@ def solve_vigenere_bruteforce_with_hints(ciphertext_full, known_start_plain, tar
                 elif temp_key_chars[pos_in_key] != target_key_segment[k_idx]:
                     consistent = False
                     break
+                
             if not consistent:
                 continue # 这个密钥长度不兼容 target_key_segment
 
